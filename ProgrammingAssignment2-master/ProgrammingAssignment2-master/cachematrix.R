@@ -4,13 +4,13 @@
 ## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
-  invMatrix <- NULL
-  setMatrix <- function(y) {
-    x <<- y
-    invMatrix <<- NULL
+  invMatrix <- NULL   ## initialize inv as NULL; will hold value of matrix 
+  setMatrix <- function(y) {  ## define the set function to assign new
+    x <<- y  ## value of matrix in parent environment
+    invMatrix <<- NULL ## if there is a new matrix, reset inv to NULL
   }
-    getMatrix <- function() x 
-    setInverse <- function(inverse) invMatrix <<- inverse
+    getMatrix <- function() x ## define the get fucntion - returns value of the matrix argument
+    setInverse <- function(inverse) invMatrix <<- inverse  ## assigns value of inv in parent 
     getInverse <- function() invMatrix
     list(setMatrix = setMatrix, getMatrix = getMatrix,setInverse = setInverse, getInverse = getInverse)
 }
